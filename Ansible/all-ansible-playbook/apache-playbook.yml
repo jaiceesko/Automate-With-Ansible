@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  become:  true
+
+  tasks:
+   - name:  Install the latest version of apache
+     dnf:
+       name:  httpd
+       state:  latest
+       
+   - name:  Make sure apache is started now and at boot.
+     service:
+       name:  httpd
+       state:  started
+       enabled:  yes

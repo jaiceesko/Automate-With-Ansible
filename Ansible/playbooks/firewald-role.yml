@@ -1,0 +1,6 @@
+---
+- name:  firewall role playbook
+  hosts:  server1
+  become:  true
+  roles:
+    - role:  "/home/user/firewalldinstall"

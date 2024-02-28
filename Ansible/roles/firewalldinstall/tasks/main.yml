@@ -1,0 +1,11 @@
+---
+- name:  install firewalld
+  apt:
+    name:  firewalld
+    state:  present
+
+- name:  enable firewalld
+  service:
+    name:  firewalld
+    state:  started
+    enabled:  yes

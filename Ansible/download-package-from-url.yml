@@ -1,0 +1,21 @@
+---
+- name:  create a folder and download apache tomcat from url
+  hosts:  dbserver
+  become:  true
+
+  tasks:
+  - name:  create a directory /opt/tomcat
+    file:
+      path:  /opt/tomcat
+      state:  directory
+      mode:  0754
+      owner:  root
+      group:  root
+
+  - name:  download tomcat using get_url
+    get_url:
+      url:  https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.85/bin/apache-tomcat-9.0.85.tar.gz
+      dest:  /opt/tomcat
+      mode:  0754
+      owner:  joe
+      group:  joe

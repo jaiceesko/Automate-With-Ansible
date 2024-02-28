@@ -1,0 +1,12 @@
+---
+- name:  full install
+  hosts:  user@192.168.x.x
+  become:  true
+  roles:
+    - role:  "/home/user/roles/fullinstall" 
+
+- name:  basic install
+  hosts:  user@192.168.x.x
+  become:  true
+  roles:
+    - role:  "/home/user/roles/basicinstall" 

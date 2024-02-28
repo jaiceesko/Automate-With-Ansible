@@ -1,0 +1,17 @@
+---
+- name:  change file permissions
+  hosts:  all
+  become:  true
+
+  tasks:
+  - name:  touch a file or create a new file
+    file:
+      path:  /home/jjoefile-to-change1.txt
+      state:  touch
+      mode:  0644
+
+  - name:  touch a file or create a new file
+    file:
+      path:  /home/jjoe/file-to-change1.txt
+      state:  touch
+      mode:  0644

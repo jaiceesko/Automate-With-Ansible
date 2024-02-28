@@ -1,0 +1,11 @@
+---
+- name:  change file permissions
+  hosts:  all
+  become:  true
+
+
+  tasks:
+  - name:  file permissions
+    file:
+      path:  /home/joe/file-to-change.txt
+      mode:  0660

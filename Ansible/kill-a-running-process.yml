@@ -1,0 +1,15 @@
+---
+- name:  find a process and kill it
+  hosts:  dbserver
+  become:  true
+
+  tasks:
+  - name:  get running processes from remote hosts
+    ignore_errors:  yes
+    shell:  "ps aux | grep htop | awk '{print $2}'"
+    register:  running_process
+
+  - name:  kill running processes
+    ignore_errors:  yes
+    shell:  "kill {{ item }}"
+    with_items:  "{{ running_process.stdout_lines }}"

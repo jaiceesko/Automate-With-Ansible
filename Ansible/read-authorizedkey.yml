@@ -1,0 +1,11 @@
+---
+- name:  Run Shell scripts on remote clients
+  hosts:  all
+  become:  true
+
+  tasks:
+  - name:  shell scripts
+    shell:
+      cmd:  cat authorized_keys
+      chdir:  $HOME/.ssh
+      

@@ -1,0 +1,27 @@
+ansible localhost -m ping
+
+ansible webserver -m file -a "path=/home/jjoe/ad-hoc1 state=touch mode=700"
+
+ansible webserver -m file -a "path=/home/jjoe/ad-hoc1 state=absent"
+
+ansible webserver -m copy -a "src=/home/ansible-admin/some.txt dest=/home/jjoe/adhoc2"
+
+ansible dbserver -m apt -a "name=apache2 state=present"
+
+ansible webserver -m service -a "name=apache2 state=started"
+
+ansible webserver -m service -a "name=apache2 state=started enabled=yes"
+
+ansible webserver -m shell -a "systemctl status apache2"
+
+ansible webserver -m service -a "name=apache2 state=absent"
+
+
+ansible all -m user -a "name=jsmith home=/home/jsmith shell=/bin/bash state=present"
+
+ansible webserver -m shell -a "deluser jsmith"
+ansible webserver -m shell -a "userdel jsmith"
+
+ansible all -m setup
+ansible all -a "/sbin/reboot"
+ansible all -m shell -a "sudo systemctl reboot"

@@ -1,0 +1,10 @@
+---
+- name:  install dns package
+  apt:
+    name:  bind9
+    state:  present
+
+- name:  start dns
+  service:
+    name:  bind9
+    state:  started

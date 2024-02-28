@@ -1,0 +1,19 @@
+# remote hosts
+
+[webserver]
+user@192.168.x.x
+user@192.168.x.x
+
+[management]
+user@192.168.x.x
+[dbserver]
+user@192.168.x.x
+user@192.168.x.x
+
+[server1]
+user@192.168.x.x
+user@192.168.x.x
+
+[server2]
+user@192.168.x.x
+user@192.168.x.x

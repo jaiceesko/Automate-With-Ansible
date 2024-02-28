@@ -1,0 +1,8 @@
+---
+- name:  install packages
+  hosts:  server2
+  become:  true
+  roles:
+    - apache
+    - chrony-time
+    - DnsPackage

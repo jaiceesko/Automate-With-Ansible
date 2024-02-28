@@ -1,0 +1,13 @@
+---
+- name:  copy file to remote client
+  hosts:  management
+  become:  true
+
+  tasks:
+  - name:  copying file
+    copy:
+      src:  /home/ansible-admin/some.txt
+      dest:  /tmp
+      owner:  jjow
+      group:  jjow
+      mode:  0640

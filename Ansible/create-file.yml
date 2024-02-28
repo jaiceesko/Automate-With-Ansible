@@ -1,0 +1,11 @@
+---
+- name:  change file permissions
+  hosts:  all
+  become:  true
+
+  tasks:
+  - name:  touch a file or create a new file
+    file:
+      path:  /home/jjow/file-to-change.txt
+      state:  touch
+      mode:  0640
